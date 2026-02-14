@@ -13,7 +13,7 @@ services:
       - .env
     environment:
       - PORT=8000
-      - ALLOWED_ORIGINS=http://localhost:8501
+      - ALLOWED_ORIGINS=https://frontend-iqeh.onrender.com
     ports:
       - "8000:8000"
     restart: unless-stopped
@@ -24,7 +24,7 @@ services:
       dockerfile: frontend/Dockerfile
     container_name: hr-chatbot-frontend
     environment:
-      - BACKEND_URL=http://backend:8000
+      - BACKEND_URL=https://hr-chatbot-project.onrender.com
       - PORT=8501
     ports:
       - "8501:8501"

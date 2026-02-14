@@ -17,7 +17,7 @@ services:
       - key: PINECONE_INDEX
         value: gaida-hr-rules
       - key: ALLOWED_ORIGINS
-        value: https://hr-chatbot-frontend.onrender.com
+        value: https://frontend-iqeh.onrender.com
 
   # ============ Frontend: Streamlit UI ============
   - type: web

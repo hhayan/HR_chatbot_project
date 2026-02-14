@@ -11,7 +11,7 @@ import requests
 import streamlit as st
 
 # 백엔드 URL (로컬: http://localhost:8000 / Docker: http://backend:8000)
-BACKEND_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
+BACKEND_URL = os.getenv("BACKEND_URL", "https://hr-chatbot-project.onrender.com")
 
 
 def send_message(query: str) -> str:
