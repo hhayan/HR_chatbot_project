@@ -1,0 +1,27 @@
+# docker-compose.yml
+# 가이다 HR 챗봇 — 로컬 개발 환경
+# backend: FastAPI (API 키 보유)
+# frontend: Streamlit (순수 UI)
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: hr-chatbot-backend
+    env_file:
+      - .env            # API 키는 백엔드에서만 로드
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: hr-chatbot-frontend
+    environment:
+      - BACKEND_URL=http://backend:8000
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    restart: unless-stopped
