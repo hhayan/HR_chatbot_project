@@ -16,4 +16,5 @@ COPY backend/ .
 
 EXPOSE 8000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# ENV PORT=8000 (Optional: Dockerfile 내 기본값 설정을 명시할 수도 있음)
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]

@@ -56,6 +56,12 @@ def health_check():
     return {"status": "ok"}
 
 
+@app.get("/")
+def root():
+    """서버 루트 핸들러"""
+    return {"message": "HR Chatbot API is running!"}
+
+
 @app.post("/chat", response_model=ChatResponse)
 def chat(req: ChatRequest):
     """
