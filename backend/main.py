@@ -45,8 +45,8 @@ app.add_middleware(
 @app.on_event("startup")
 def on_startup():
     """서버 시작 시 Settings 로딩 확인"""
-    """서버 시작 시 Settings 로딩 확인"""
-    print(f"[Settings] .env 경로 = {ENV_PATH}")
+    print(f"[Settings] ALLOWED_ORIGINS = {settings.ALLOWED_ORIGINS}")
+    print(f"[Settings] PINECONE_INDEX = {settings.PINECONE_INDEX}")
 
 
 # ==================== Endpoints ====================

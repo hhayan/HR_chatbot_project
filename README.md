@@ -195,97 +195,68 @@ graph TD
 
 ---
 
-## 🚀 설치 및 실행 방법
+## 🚀 설치 및 실행 방법 (로컬 개발)
 
 ### **1. 환경 설정**
+프로젝트 루트에 `.env` 파일을 생성하고 API 키를 설정합니다.
 
 ```bash
-# Python 3.12 필요
-pip install -r requirements.txt
-```
-
-### **2. API 키 설정**
-
-```bash
-# .env 파일 생성
 OPENAI_API_KEY=your_openai_api_key
 PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_INDEX_NAME=your_index_name
+PINECONE_INDEX=gaida-hr-rules
 ```
 
-### **3. 데이터 준비**
+### **2. 실행 (Docker Compose)**
+이 프로젝트는 Docker 환경에서 실행하는 것을 권장합니다.
 
 ```bash
-# 벡터 DB에 문서 임베딩 (최초 1회)
-cd scripts/
-python create_pinecone_index.py
+docker-compose up --build
 ```
-
-### **4. LangGraph Studio 실행**
-
-```bash
-cd ..
-langgraph dev
-```
+- **Backend API**: `http://localhost:8000`
+- **Frontend UI**: `http://localhost:8501`
 
 ---
 
-## 📝 사용 예시
+## ☁️ 배포 (Render)
 
-### **✅ RAG 답변 성공 케이스**
+이 프로젝트는 **Backend**와 **Frontend** 두 개의 서비스로 분리하여 배포해야 합니다.
 
-```
-👤 사용자: "입사 4개월차에는 연차 얼마나 있나요?"
+### **옵션 1: Blueprint 사용 (추천)**
+1. Render 대시보드에서 `New Blueprint Instance` 클릭
+2. `render.yaml` 파일이 있는 리포지토리 연결
+3. `Apply` 클릭하면 백엔드와 프론트엔드가 자동으로 생성 및 연결됨
 
-🤖 가이다 HR: "입사 4개월 차라면 1년 미만 근속자에 해당하므로, 매달 1개월 만근 시 1개의 월차가 부여됩니다. 따라서 현재까지 최대 4개의 월차가 발생했을 수 있습니다. 월차는 해당 휴가가 발생한 날로부터 1년 안에 사용해야 하며, 사용 기간이 지나면 소멸됩니다. 1년이 지나면 다음해 1월 1일에 연차휴가 15일이 부여됩니다[1].
-
-출처 목록
-[1] (04_복지정책_v1.0.md)"
-```
-
-### **📞 담당자 안내 케이스**
-
-```
-👤 사용자: "급여 계산에 오류가 있는 것 같은데 어디에 문의해야 하나요?"
-
-🤖 가이다 HR: "해당 문의사항은 인사팀으로 문의하시면 정확하고 빠른 답변을 받으실 수 있습니다.
-
-📧 이메일: hr@gaida.play.com
-💬 Slack: #ask-hr"
-
-추가 질문이 있으시면 언제든 말씀해 주세요! 😊
-```
-
-### **❌ 질문 거절 케이스**
-
-```
-👤 사용자: "오늘 날씨가 어때요?"
-
-🤖 가이다 HR: "입력하신 질문은 HR 관련 문의가 아닙니다. HR 관련 질문만 가능합니다."
-
-```
+### **옵션 2: 수동 배포**
+1. **Backend Service** 생성
+   - Type: Web Service
+   - Root Directory: `.` (기본값)
+   - Build Command: (Docker 사용 시 불필요)
+   - Environment Variables: `OPENAI_API_KEY`, `PINECONE_API_KEY` 추가
+2. **Frontend Service** 생성
+   - Type: Web Service
+   - Root Directory: `.` (기본값)
+   - Environment Variables: `BACKEND_URL` (배포된 백엔드 주소, 예: `https://hr-chatbot-backend.onrender.com`)
 
 ---
 
 ## 🗂 프로젝트 구조
 
 ```
-📦 HR-chatbot-development-project/
-├── 📂 src/
-│   ├── 📄 graph.py                 # LangGraph 워크플로우
-│   ├── 📄 nodes.py                 # 각 노드 구현
-│   ├── 📄 router.py                # 각 라우터 구현
-│   ├── 📄 state.py                 # State 클래스 정의
-│   └── 📄 utils.py                 # 유틸리티 함수
-├── 📂 data/
-│   └── 📄 04_복지정책_v1.0.md       # HR 데이터셋
-├── 📂 scripts/
-│   └── 📄 create_pinecone_index.py # 벡터DB 초기 설정
-├── 📂 tests/                       # 통합 테스트 코드
-├── 📂 archive/                     # 팀원별 실험 코드 보관
-├── 📄 langgraph.json               # LangGraph Studio 설정
-├── 📄 requirements.txt             # 패키지 의존성
-└── 📄 README.md                    # 프로젝트 문서
+📦 HR_chatbot_project/
+├── 📂 backend/                 # FastAPI 서버 & RAG 로직
+│   ├── 📄 main.py              # API 엔트리포인트
+│   ├── 📄 graph.py             # LangGraph 워크플로우
+│   ├── 📄 nodes.py             # 노드 (검색, 생성, 검증 등)
+│   ├── 📄 router.py            # 라우팅 로직
+│   ├── 📄 db.py                # Pinecone 벡터 DB 및 문서 로더
+│   ├── 📄 config.py            # 환경 변수 관리
+│   └── 📄 requirements.txt     # 백엔드 의존성
+├── 📂 frontend/                # Streamlit UI
+│   ├── 📄 app.py               # 챗봇 UI 메인
+│   └── 📄 requirements.txt     # 프론트엔드 의존성
+├── 📄 docker-compose.yml       # 로컬 실행용 설정
+├── 📄 render.yaml              # Render 배포용 Blueprint
+└── 📄 README.md                # 프로젝트 문서
 ```
 
 ---
