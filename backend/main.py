@@ -45,9 +45,7 @@ app.add_middleware(
 @app.on_event("startup")
 def on_startup():
     """서버 시작 시 Settings 로딩 확인"""
-    key_preview = settings.OPENAI_API_KEY[:8] + "..." if settings.OPENAI_API_KEY else "(없음)"
-    print(f"[Settings] OPENAI_API_KEY = {key_preview}")
-    print(f"[Settings] PINECONE_INDEX = {settings.PINECONE_INDEX}")
+    """서버 시작 시 Settings 로딩 확인"""
     print(f"[Settings] .env 경로 = {ENV_PATH}")
 
 
