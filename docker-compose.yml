@@ -6,7 +6,8 @@
 services:
   backend:
     build:
-      context: ./backend
+      context: .              # 루트 컨텍스트 사용
+      dockerfile: backend/Dockerfile
     container_name: hr-chatbot-backend
     env_file:
       - .env            # API 키는 백엔드에서만 로드
@@ -16,7 +17,8 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: .              # 루트 컨텍스트 사용
+      dockerfile: frontend/Dockerfile
     container_name: hr-chatbot-frontend
     environment:
       - BACKEND_URL=http://backend:8000

@@ -7,7 +7,7 @@ services:
     name: hr-chatbot-backend
     runtime: docker
     dockerfilePath: ./backend/Dockerfile
-    dockerContext: ./backend
+    dockerContext: .
     healthCheckPath: /health
     envVars:
       - key: OPENAI_API_KEY
@@ -22,7 +22,7 @@ services:
     name: hr-chatbot-frontend
     runtime: docker
     dockerfilePath: ./frontend/Dockerfile
-    dockerContext: ./frontend
+    dockerContext: .
     envVars:
       - key: BACKEND_URL
         fromService:

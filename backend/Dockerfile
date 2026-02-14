@@ -1,14 +1,18 @@
 # Backend Dockerfile — FastAPI + LangGraph
 FROM python:3.12-slim
 
+# Root Context 기준: WORKDIR을 /app/backend로 설정해도 되지만, 
+# 관례상 컨테이너 내부는 /app을 많이 사용.
+# 사용자 요청대로 소스 구조에 맞게 복사.
+
 WORKDIR /app
 
-# 의존성 설치
-COPY requirements.txt .
+# 루트에서 빌드하므로 backend/requirements.txt를 복사
+COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 소스 코드 복사
-COPY . .
+# 루트에서 빌드하므로 backend/ 폴더 전체를 복사
+COPY backend/ .
 
 EXPOSE 8000
 
