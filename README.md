@@ -225,14 +225,6 @@ Backend와 Frontend를 **각각 별도 Web Service**로 배포합니다.
 | Docker Build Context | `.` |
 | Health Check Path | `/health` |
 
-**Environment Variables:**
-| Key | Value |
-|---|---|
-| `OPENAI_API_KEY` | `sk-...` |
-| `PINECONE_API_KEY` | `pcsk_...` |
-| `PINECONE_INDEX` | `gaida-hr-rules` |
-| `ALLOWED_ORIGINS` | `https://frontend-iqeh.onrender.com` |
-
 ### Step 2: Frontend 서비스
 
 | 설정 | 값 |
@@ -284,8 +276,7 @@ Backend와 Frontend를 **각각 별도 Web Service**로 배포합니다.
 ## 참여인원, 역할
 4인, 1차 라우터, 거절 노드, 전처리 노드, 배포
 
-| 내용 |
-|---|---|
+### 내용
 | 요구사항 분석 및 아키텍처 설계 |
 | 가상 회사 데이터 제작 및 벡터DB 구축 |
 | LangGraph 노드 개발 및 라우팅 로직 구현 |
@@ -315,5 +306,3 @@ Backend와 Frontend를 **각각 별도 Web Service**로 배포합니다.
 | 임베딩 모델 메모리 | 한국어 특화 모델 메모리 부족 | OpenAI embeddings-3-small API 활용 |
 | 답변 품질 일관성 | RAG 답변 정확성 보장 필요 | 문서 기반 검증 + 재생성 루프 구현 |
 | 코드 복잡도 | 오버엔지니어링 발생 | `with_structured_output`으로 단순화 |
-
----
