@@ -4,8 +4,6 @@
 
 가상의 회사 '가이다 플레이 스튜디오(Gaida Play Studio, GPS)'를 위한 AI 기반 HR 챗봇으로, RAG(Retrieval-Augmented Generation), Reranker, 검증 루프 기술을 사용하여 HR 관련 질문에 대해 정확하고 신뢰성 있는 답변을 제공하는 것을 목표로 합니다.
 
-> 🔗 **Live Demo**: [https://frontend-iqeh.onrender.com](https://frontend-iqeh.onrender.com)
-
 ---
 
 # 핵심 기능
@@ -213,8 +211,8 @@ Backend와 Frontend를 **각각 별도 Web Service**로 배포합니다.
 
 | 서비스 | URL | 역할 |
 |---|---|---|
-| Backend | `https://hr-chatbot-project.onrender.com` | FastAPI + RAG API |
-| Frontend | `https://frontend-iqeh.onrender.com` | Streamlit 챗봇 UI |
+| Backend | FastAPI + RAG API |
+| Frontend | Streamlit 챗봇 UI |
 
 ### Step 1: Backend 서비스
 
@@ -232,11 +230,6 @@ Backend와 Frontend를 **각각 별도 Web Service**로 배포합니다.
 | Runtime | Docker |
 | Dockerfile Path | `./frontend/Dockerfile` |
 | Docker Build Context | `.` |
-
-**Environment Variables:**
-| Key | Value |
-|---|---|
-| `BACKEND_URL` | `https://hr-chatbot-project.onrender.com` |
 
 ### API 엔드포인트
 
