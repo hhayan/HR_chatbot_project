@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "query": "연차휴가는 며칠인가요?",
+        "ground_truth": "연차휴가는 기본 15일입니다.",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 2,
+        "query": "연차는 언제 부여되나요?",
+        "ground_truth": "기존 근속자를 대상으로 매년 1월 1일 부여됩니다.",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 3,
+        "query": "미사용 연차는 이월되나요?",
+        "ground_truth": "미사용 연차는 이월되지 않습니다.",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 4,
+        "query": "연차 신청 절차를 알려주세요.",
+        "ground_truth": "전자결재(팀장) 승인 후 휴가 확정",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 5,
+        "query": "입사 첫해 월차는 어떻게 부여되나요?",
+        "ground_truth": "당해년도 입사자(1년 미만 근속자)는 1개월 만근 시 1개의 월차가 부여됩니다. (최대 11일)",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 6,
+        "query": "장기 근속자 연차 가산일은 어떻게 되나요?",
+        "ground_truth": "2년 이상 근속자(입사 3년차)부터 2년에 1일씩 연차가 가산됩니다.",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 7,
+        "query": "연차 최대 일수는 몇 일인가요?",
+        "ground_truth": "연차일수는 최대 25일까지 증가 가능합니다.",
+        "relevant_section": "1.1 연차휴가"
+    },
+    {
+        "id": 8,
+        "query": "병가는 며칠 사용할 수 있나요?",
+        "ground_truth": "연간 5일 유급 병가를 사용할 수 있습니다. (5일 초과 시, 무급)",
+        "relevant_section": "1.2 병가"
+    },
+    {
+        "id": 9,
+        "query": "병가 시 진단서는 언제 제출해야 하나요?",
+        "ground_truth": "병가의 연간 누적일이 2일 초과 시, 의사 진단서 또는 소견서를 제출해야 합니다.",
+        "relevant_section": "1.2 병가"
+    },
+    {
+        "id": 10,
+        "query": "병가 증빙서류 제출기한은?",
+        "ground_truth": "병가 후 근무일 기준 3일까지",
+        "relevant_section": "1.2 병가"
+    },
+    {
+        "id": 11,
+        "query": "가족돌봄휴가는 며칠인가요?",
+        "ground_truth": "법정 기준에 따라 연 10일 무급으로 사용할 수 있습니다.",
+        "relevant_section": "1.3 가족돌봄휴가"
+    },
+    {
+        "id": 12,
+        "query": "가족돌봄휴가 대상 가족 범위는?",
+        "ground_truth": "자녀, 부모(배우자의 부모 포함), 배우자의 질병·사고·노령 돌봄 사유에 한합니다.",
+        "relevant_section": "1.3 가족돌봄휴가"
+    },
+    {
+        "id": 13,
+        "query": "복지포인트는 얼마나 지급되나요?",
+        "ground_truth": "연간 300만원의 복지포인트가 지급됩니다.",
+        "relevant_section": "2.1 복지포인트"
+    },
+    {
+        "id": 14,
+        "query": "복지포인트는 어디서 사용하나요?",
+        "ground_truth": "AK복지몰(https://akfamily.com)에서만 사용 가능합니다.",
+        "relevant_section": "2.1 복지포인트"
+    },
+    {
+        "id": 15,
+        "query": "복지포인트는 언제 지급되나요?",
+        "ground_truth": "포인트는 매년 1월에 일괄 지급됩니다.",
+        "relevant_section": "2.1 복지포인트"
+    },
+    {
+        "id": 16,
+        "query": "신입사원 복지포인트는 어떻게 계산되나요?",
+        "ground_truth": "근무 개월 수에 비례하여 월할 계산하여 당해분 복지포인트가 지급됩니다. (지급일: 수습기간 종료일)",
+        "relevant_section": "2.1 복지포인트"
+    },
+    {
+        "id": 17,
+        "query": "AK복지몰 가입 방법을 알려주세요.",
+        "ground_truth": "AK복지몰에 접속하여 회원가입 클릭, 소속에 가이다 플레이 스튜디오 입력, 회사 메일주소 입력 후 이메일 인증",
+        "relevant_section": "2.1 복지포인트"
+    },
+    {
+        "id": 18,
+        "query": "교육비 지원 한도는 얼마인가요?",
+        "ground_truth": "연간 50만원 한도로 자기계발 교육비를 지원합니다.",
+        "relevant_section": "2.2 교육비 지원"
+    },
+    {
+        "id": 19,
+        "query": "교육비 지원 대상 과정은?",
+        "ground_truth": "어학, 직무 관련 강의, 자격증 과정 등이 포함됩니다.",
+        "relevant_section": "2.2 교육비 지원"
+    },
+    {
+        "id": 20,
+        "query": "교육비 신청 절차를 알려주세요.",
+        "ground_truth": "Slack #ask-hr 채널에 교육비 지원 여부 확인 → 전자결재(팀장 → C레벨) 사전 승인 → 교육 수강 후 영수증 및 수료증 제출",
+        "relevant_section": "2.2 교육비 지원"
+    },
+    {
+        "id": 21,
+        "query": "입사 시 어떤 장비를 지급받나요?",
+        "ground_truth": "입사 시 노트북 1대를 지급합니다. 모니터는 최대 2대까지 지원합니다.",
+        "relevant_section": "3.1 기본 장비"
+    },
+    {
+        "id": 22,
+        "query": "개인장비 보조 금액은 얼마인가요?",
+        "ground_truth": "200만원/2년 한도로 개인 업무용 장비 구입을 기본 장비와 별도로 추가 지원합니다.",
+        "relevant_section": "3.2 개인장비 보조"
+    },
+    {
+        "id": 23,
+        "query": "개인장비 보조로 어떤 장비를 구입할 수 있나요?",
+        "ground_truth": "키보드, 마우스, 태블릿, 헤드셋. 그 외 장비는 총무팀의 사전승인이 필요합니다.",
+        "relevant_section": "3.2 개인장비 보조"
+    },
+    {
+        "id": 24,
+        "query": "건강검진은 어떻게 지원되나요?",
+        "ground_truth": "연 1회 종합 건강검진을 지원합니다. 지정 병원(한국건강관리협회)에서 이용 가능합니다.",
+        "relevant_section": "4. 종합 건강검진"
+    },
+    {
+        "id": 25,
+        "query": "건강검진 지원 대상 범위는?",
+        "ground_truth": "본인·배우자(연 1회), 부모(배우자의 부모 포함, 입사년도 기준 2년에 1회)",
+        "relevant_section": "4. 종합 건강검진"
+    },
+    {
+        "id": 26,
+        "query": "사내 스낵바에서 무엇을 제공하나요?",
+        "ground_truth": "커피머신, 차류, 음료, 과자, 컵라면 등을 상시 구비합니다.",
+        "relevant_section": "5. 카페/스낵바"
+    },
+    {
+        "id": 27,
+        "query": "동아리 활동 지원 예산은 얼마인가요?",
+        "ground_truth": "2만원/1인/1개월/1곳 한도",
+        "relevant_section": "6. 사내 동아리 활동 지원"
+    },
+    {
+        "id": 28,
+        "query": "육아 지원금은 얼마인가요?",
+        "ground_truth": "만 8세 이하 자녀 1인당 월 20만원의 육아 지원금을 지급합니다. (최대 40만원)",
+        "relevant_section": "7.1 육아 지원금"
+    },
+    {
+        "id": 29,
+        "query": "태아 검진 휴가는 어떻게 사용하나요?",
+        "ground_truth": "임신 직원은 태아 검진 시 유급 반차를 사용할 수 있습니다.",
+        "relevant_section": "7.2 태아 검진 휴가"
+    },
+    {
+        "id": 30,
+        "query": "난임 휴가는 며칠인가요?",
+        "ground_truth": "난임 치료 목적의 유급 휴가를 연 3일 제공합니다.",
+        "relevant_section": "7.3 난임 휴가"
+    },
+    {
+        "id": 31,
+        "query": "맛있는 김치찌개 끓이는 방법 알려주세요.",
+        "ground_truth": "OOD",
+        "relevant_section": "OOD"
+    },
+    {
+        "id": 32,
+        "query": "파이썬에서 리스트를 내림차순으로 정렬하는 코드는 어떻게 작성하나요?",
+        "ground_truth": "OOD",
+        "relevant_section": "OOD"
+    },
+    {
+        "id": 33,
+        "query": "내일 서울 날씨는 비가 오나요?",
+        "ground_truth": "OOD",
+        "relevant_section": "OOD"
+    },
+    {
+        "id": 34,
+        "query": "아이폰 15 프로맥스 256GB 가격이 얼마인가요?",
+        "ground_truth": "OOD",
+        "relevant_section": "OOD"
+    },
+    {
+        "id": 35,
+        "query": "방탄소년단(BTS) 멤버 이름 알려줘.",
+        "ground_truth": "OOD",
+        "relevant_section": "OOD"
+    }
+]
